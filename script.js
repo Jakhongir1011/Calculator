@@ -1,7 +1,7 @@
 const display = document.getElementById('display');
-
+ buttons = document.querySelectorAll('.button');
 // 1. bu button click bolganda hisoblaydi, yozadi.
-document.querySelectorAll('.button').forEach((button) => {  // buttons = document.querySelectorAll('.button');
+document.querySelectorAll('.button').forEach((button) => { 
     button.addEventListener('click', (e) => {
         switch (e.target.innerText) {
             case 'C': display.innerText = ''; break;
@@ -81,6 +81,8 @@ document.addEventListener("keydown", (e) => {
 })
 //  3. bu Klaviyatura bosilganda backgroun hosil bo'lib o'chadi
 document.addEventListener("keydown", (e) => {
+    console.log(e.keyCode);
+    
     buttons.forEach(button => {
         if (button.textContent == e.key)
             button.style.background = "#1ab914";
